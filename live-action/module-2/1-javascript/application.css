@@ -1,0 +1,34 @@
+.navbar {
+    background-color: #222222;
+}
+.navbar .navbar-brand { /* specificità: 20 */
+    color: #9d9d9d;
+}
+.hero {
+    background-color: #eee;
+}
+
+.navbar-brand { /* specificità: 10 */
+    color: green;
+}
+
+body {
+    margin: 0;
+}
+.container {
+    padding: 0 15px;
+}
+.navbar .navbar-brand {
+    font-size: 18px;
+}
+.navbar {
+    padding: 10px 0;
+}
+.width-33 {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+}
+.hero {
+    padding: 25px 0;
+}

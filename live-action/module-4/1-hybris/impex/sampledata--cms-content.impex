@@ -1,0 +1,40 @@
+# CMS Footer Component
+INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
+;;FooterComponent;2;FooterComponent
+
+# Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+;;SiteLogoSlot;SiteLogoComponent
+;;HomepageNavLinkSlot;HomepageNavLink
+;;MiniCartSlot;MiniCart
+;;NavigationBarSlot;NavBarComponent,breadcrumbComponent
+;;FooterSlot;FooterComponent
+;;HeaderLinksSlot;ContactInfo
+;;SearchBoxSlot;SearchBox,LangCurrencyComponent
+
+
+## HOMEPAGE ##
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+;;ElectronicsHompageSplashBannerComponent;Electronics Homepage Splash Banner Component;/OpenCatalogue/Cameras/Digital-Cameras/Digital-SLR/c/578;ElectronicsHompageSplashBannerComponent
+;;ElectronicsHompageDiscountBannerComponent;Electronics Homepage Discount Banner Component;/Open-Catalogue/Cameras/Camera-Accessories-%26-Supplies/c/585;ElectronicsHompageDiscountBannerComponent
+;;ElectronicsHompageLightFamBannerComponent;Electronics Homepage Light Family Banner Component;/Open-Catalogue/Cameras/DigitalCameras/Digital-Compacts/c/576;ElectronicsHompageLightFamBannerComponent
+;;ElectronicsHompageLightFamTextBannerComponent;Electronics Homepage Light Family Text Banner Component;/Open-Catalogue/Cameras/CameraAccessories-%26-Supplies/CameraLenses/c/588;ElectronicsHompageLightFamTextBannerComponent
+;;ElectronicsHompageCamcordersBannerComponent;Electronics Homepage Camcorders Banner Component;/Open-Catalogue/Cameras/Hand-held-Camcorders/c/584;ElectronicsHompageCamcordersBannerComponent
+;;ElectronicsHompageCamcordersChildBannerComponent;Electronics Homepage Light Family Banner Component Child;/Open-Catalogue/Components/PowerSupplies/c/816;ElectronicsHompageCamcordersChildBannerComponent
+
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+;;NewElectronicsHomepageProductCarouselComponent;What's New Electronics Homepage Product Carousel;2278102,1992693,1981415,1934796,1776948,1641905,1532809,932577;allVisible;false;NewElectronicsHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+;;Section1Slot-Homepage;ElectronicsHompageSplashBannerComponent,ElectronicsHompageDiscountBannerComponent
+;;Section2ASlot-Homepage;ElectronicsHompageLightFamBannerComponent,ElectronicsHompageLightFamTextBannerComponent
+;;Section2BSlot-Homepage;ElectronicsHompageCamcordersChildBannerComponent,ElectronicsHompageCamcordersBannerComponent
+;;Section2CSlot-Homepage;
+;;Section3Slot-Homepage;NewElectronicsHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+;;Section1-Homepage;Section1;homepage;Section1Slot-Homepage
+;;Section2A-Homepage;Section2A;homepage;Section2ASlot-Homepage
+;;Section2B-Homepage;Section2B;homepage;Section2BSlot-Homepage
+;;Section2C-Homepage;Section2C;homepage;Section2CSlot-Homepage
+;;Section3-Homepage;Section3;homepage;Section3Slot-Homepage

@@ -1,0 +1,49 @@
+# Create PageTemplates
+# These define the layout for pages
+# "FrontendTemplateName" is used to define the JSP that should be used to render the page for pages with multiple possible layouts.
+# "RestrictedPageTypes" is used to restrict templates to page types
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;LandingPage2Template;Landing Page 2 Template;layout/landingLayout2Page;CategoryPage,ContentPage
+
+
+# Add Velocity templates that are in the CMS Cockpit. These give a better layout for editing pages
+# The FileLoaderValueTranslator loads a File into a String property. The templates could also be inserted in-line in this file.
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;LandingPage2Template;$jarResourceCms/structure-view/structure_landingPage2Template.vm
+
+
+# Landing Page Templates
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Section1;;;wide
+;Section2A;;;narrow
+;Section2B;;;narrow
+;Section2C;;;wide
+;Section3;;;wide
+;Section4;;;narrow
+;Section5;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+;;SiteLogo-LandingPage2;SiteLogo;LandingPage2Template;SiteLogoSlot
+;;HomepageLink-LandingPage2;HomepageNavLink;LandingPage2Template;HomepageNavLinkSlot
+;;NavigationBar-LandingPage2;NavigationBar;LandingPage2Template;NavigationBarSlot
+;;MiniCart-LandingPage2;MiniCart;LandingPage2Template;MiniCartSlot
+;;Footer-LandingPage2;Footer;LandingPage2Template;FooterSlot
+;;HeaderLinks-LandingPage2;HeaderLinks;LandingPage2Template;HeaderLinksSlot
+;;SearchBox-LandingPage2;SearchBox;LandingPage2Template;SearchBoxSlot
+;;TopHeaderSlot-LandingPage2;TopHeaderSlot;LandingPage2Template;TopHeaderSlot
+;;BottomHeaderSlot-LandingPage2;BottomHeaderSlot;LandingPage2Template;BottomHeaderSlot
+;;PlaceholderContentSlot-LandingPage2;PlaceholderContentSlot;LandingPage2Template;PlaceholderContentSlot
+
+
+# Create Content Pages
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
+;;homepage;Homepage;LandingPage2Template;homepage
