@@ -1,0 +1,6 @@
+{
+  "name": "an-introduction-to-frontend-for-beginners",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
