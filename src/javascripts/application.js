@@ -13,7 +13,7 @@ $(document).on('click', '.article .article--like', function()
 
     $.ajax({
         url: 'like.json',
-        method: 'POST',
+        method: 'GET', // 'PUT',
         data: {
             id: articleId,
         },
