@@ -7,4 +7,4 @@ Slides are available on [speakerdeck].
 
 All slides have been prepared and used by me while teaching a course on Frontend basics.
 
-[speakerdeck]: https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners
+[speakerdeck]: https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners-2018-edition
