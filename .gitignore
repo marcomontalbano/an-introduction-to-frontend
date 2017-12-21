@@ -5,3 +5,8 @@
 
 /public/application.css
 /public/application.js
+
+
+/* intellij */
+.idea
+*.iml
