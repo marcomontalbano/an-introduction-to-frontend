@@ -1,9 +1,11 @@
-var ghpages = require('gh-pages');
+const ghpages = require('gh-pages');
+const config = require('../package.json');
+const domain = process.env.GH_TOKEN ? `${process.env.GH_TOKEN}@github.com` : 'github.com';
 
 ghpages.publish('public', {
     dotfiles: false,
     branch: 'gh-pages',
-    repo: 'https://' + (process.env.GH_TOKEN ? (process.env.GH_TOKEN + '@') : '') + 'github.com/marcomontalbano/an-introduction-to-frontend-for-beginners.git',
+    repo: config.repository.url.replace('github.com', domain),
     message: 'Deploy to GitHub Pages.',
     silent: true
 }, function (err) {

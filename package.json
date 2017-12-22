@@ -1,14 +1,20 @@
 {
   "name": "an-introduction-to-frontend-for-beginners",
-  "description": "an-introduction-to-frontend-for-beginners",
   "version": "2.0.0",
+  "private": true,
+  "description": "an-introduction-to-frontend-for-beginners",
+  "homepage": "https://marcomontalbano.github.io/an-introduction-to-frontend-for-beginners/",
   "author": {
     "name": "Marco Montalbano",
     "url": "https://marcomontalbano.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcomontalbano/an-introduction-to-frontend-for-beginners"
+  },
   "scripts": {
-    "start": "serve public/",
+    "start": "serve -o public/",
     "build": "grunt build",
     "gh-pages": "node ./scripts/gh-pages.js",
     "deploy": "npm-run-all build gh-pages"
