@@ -11,12 +11,17 @@ $(document).on('click', '.article .article--like', function()
     var $article = $button.closest('.article');
     var articleId = $article.data('articleId');
 
+    var data = {
+        id: articleId
+    };
+
     $.ajax({
         url: 'like.json',
         method: 'GET', // 'PATCH',
-        data: {
-            id: articleId,
-        },
+        //contentType: 'application/json',
+        //dataType: 'json',
+        //data: JSON.stringify(data),
+        data: data,
         success: function (data) {
             console.log('data', data);
             $button.toggleClass('btn-success', data.like);
