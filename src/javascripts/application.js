@@ -50,7 +50,6 @@ $(function() {
                 $article.find('.article--plot').text(article.plot);
                 $article.find('.article--tag').text(article.tag);
                 $article.find('.article--like').toggleClass('btn-success', article.like);
-                $article.find();
                 $articles.append($article);
             }
         }
