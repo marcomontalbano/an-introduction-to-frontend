@@ -8,7 +8,7 @@ The course covers:
 - HTML, CSS and Javascript basics
 - DOM manipulation with Javascript and [jQuery](https://jquery.com/)
 - Quickly prototyping (e.g. [Twitter Bootstrap](http://getbootstrap.com/))
-- Dependency management with [NPM](https://www.npmjs.com/) and [Bower](https://bower.io/)
+- Dependency management with [NPM](https://www.npmjs.com/)
 - Task runner (e.g. [Grunt](https://gruntjs.com/))
 - CSS preprocessor (e.g. [Less](http://lesscss.org/))
 
