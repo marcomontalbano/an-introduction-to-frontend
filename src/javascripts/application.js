@@ -11,20 +11,15 @@ $(document).on('click', '.article .article--like', function()
     var $article = $button.closest('.article');
     var articleId = $article.data('articleId');
 
-    var data = {
-        id: articleId
-    };
-
     $.ajax({
-        url: 'like.json',
-        method: 'GET', // 'PATCH',
-        //contentType: 'application/json',
-        //dataType: 'json',
-        //data: JSON.stringify(data),
-        data: data,
-        success: function (data) {
-            console.log('data', data);
-            $button.toggleClass('btn-success', data.like);
+        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend-for-beginners/articles/' + articleId,
+        method: 'PATCH',
+        data: {
+            like: !$button.hasClass('btn-success')
+        },
+        success: function (article) {
+            console.log('article', article);
+            $button.toggleClass('btn-success', article.like);
         }
     });
 });
@@ -35,7 +30,7 @@ $(function() {
     var $articlePlaceholder = $articles.find('.article.hide');
 
     $.ajax({
-        url: 'articles.json',
+        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend-for-beginners/articles',
         method: 'GET',
         success: function (articles) {
             $articles.empty();
