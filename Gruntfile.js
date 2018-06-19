@@ -4,17 +4,20 @@ module.exports = function(grunt)
     grunt.initConfig({
         less: {
             development: {
+                options: {
+                    compress: true,
+                },
                 files: {
-                    'public/application.css': 'src/stylesheets/application.less'
+                    'public/application.min.css': 'src/stylesheets/application.less'
                 }
             }
         },
         uglify: {
             development: {
                 files: {
-                    'public/application.js': [
-                        'bower_components/jquery/dist/jquery.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'public/application.min.js': [
+                        'node_modules/jquery/dist/jquery.js',
+                        'node_modules/bootstrap/dist/js/bootstrap.js',
                         'src/javascripts/application.js',
                     ]
                 }

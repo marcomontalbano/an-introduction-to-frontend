@@ -3,5 +3,5 @@
 /bower_components
 /node_modules
 
-/public/application.css
-/public/application.js
+/public/application.min.css
+/public/application.min.js
