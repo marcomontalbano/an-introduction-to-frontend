@@ -5,8 +5,10 @@ $('.cookie-policy .cookie-policy--close').on('click', function() {
 })
 
 // Ajax Like
-$(document).on('click', '.article .article--like', function()
+$(document).on('click', '.article .article--like', function(e)
 {
+    e.preventDefault();
+
     var $button = $(this);
     var $article = $button.closest('.article');
     var articleId = $article.data('articleId');
@@ -18,7 +20,6 @@ $(document).on('click', '.article .article--like', function()
             like: !$button.hasClass('btn-success')
         },
         success: function (article) {
-            console.log('article', article);
             $button.toggleClass('btn-success', article.like);
         }
     });
@@ -27,26 +28,18 @@ $(document).on('click', '.article .article--like', function()
 // Load Articles
 $(function() {
     var $articles = $('.articles');
-    var $articlePlaceholder = $articles.find('.article.hide');
+    var source = document.getElementById('template-article').innerHTML;
+    var template = Handlebars.compile(source);
+    var html;
 
     $.ajax({
         url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend-for-beginners/articles',
         method: 'GET',
         success: function (articles) {
-            $articles.empty();
-            for (var i = 0; i < articles.length; i++) {
-                var $article = $articlePlaceholder.clone();
-                var article = articles[i];
-
-                $article.removeClass('hide');
-                $article.data('articleId', article.id);
-                $article.find('.article--title').text(article.title);
-                $article.find('.article--picture').attr('src', article.picture);
-                $article.find('.article--plot').text(article.plot);
-                $article.find('.article--tag').text(article.tag);
-                $article.find('.article--like').toggleClass('btn-success', article.like);
-                $articles.append($article);
-            }
+            $.each(articles, function (index, article) {
+                html = template(article);
+                $articles.append(html);
+            });
         }
     });
 });

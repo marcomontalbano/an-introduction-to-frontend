@@ -9,9 +9,7 @@
 
         <title>An introduction to Frontend for beginners</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="application.min.css">
-
     </head>
 
     <body>
@@ -36,7 +34,11 @@
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <p>
-                    <a class="btn btn-primary btn-lg" href="https://github.com/marcomontalbano/an-introduction-to-frontend-for-beginners" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a class="btn btn-primary btn-lg" href="https://github.com/marcomontalbano/an-introduction-to-frontend-for-beginners" target="_blank">
+                        <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
                     <a class="btn btn-primary btn-lg" href="https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners-2018-edition" target="_blank">Slides &raquo;</a>
                 </p>
             </div>
@@ -44,82 +46,24 @@
 
         <div class="container">
 
-            <div class="row articles">
-                <div class="article col-sm-6 col-md-4 hide">
-                    <h2 class="article--title"></h2>
+            <div class="row articles"></div>
+            <script id="template-article" type="text/x-handlebars-template">
+                <div class="article col-sm-6 col-md-4" data-article-id="{{id}}">
+                    <h2>{{title}}</h2>
                     <p>
-                        <img class="article--picture img-responsive img-thumbnail" />
+                        <img class="img-responsive" src="{{picture}}" />
                     </p>
                     <p>
-                        <span class="label label-primary article--tag"></span>
-                    </p>
-                    <p class="article--plot"></p>
-                    <p>
-                        <a class="article--like btn btn-default">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </div>
-                <!--
-                <div class="article col-sm-6 col-md-4" data-article-id="1">
-                    <h2>Article Title 1</h2>
-                    <p>
-                        <img src="https://placeimg.com/640/480/tech?1" class="img-responsive img-thumbnail" />
+                        <span class="label label-primary">{{tag}}</span>
                     </p>
                     <p>
-                        <span class="label label-primary">tech</span>
+                        {{plot}}
                     </p>
                     <p>
-                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
-                        semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-                        risus.
-                    </p>
-                    <p>
-                        <a class="article--like btn btn-success">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        </a>
+                        <a class="article--like btn btn-default {{#if like}}btn-success{{/if}}" href="#">like</a>
                     </p>
                 </div>
-                <div class="article col-sm-6 col-md-4" data-article-id="2">
-                    <h2>Article Title 2</h2>
-                    <p>
-                        <img src="https://placeimg.com/640/480/tech?2" class="img-responsive img-thumbnail" />
-                    </p>
-                    <p>
-                        <span class="label label-primary">tech</span>
-                    </p>
-                    <p>
-                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
-                        semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-                        risus.
-                    </p>
-                    <p>
-                        <a class="article--like btn btn-default">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </div>
-                <div class="article col-sm-6 col-md-4" data-article-id="3">
-                    <h2>Article Title 3</h2>
-                    <p>
-                        <img src="https://placeimg.com/640/480/tech?3" class="img-responsive img-thumbnail" />
-                    </p>
-                    <p>
-                        <span class="label label-primary">tech</span>
-                    </p>
-                    <p>
-                        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
-                        semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
-                        risus.
-                    </p>
-                    <p>
-                        <a class="article--like btn btn-default">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        </a>
-                    </p>
-                </div>
-                -->
-            </div>
+            </script>
 
             <hr>
 

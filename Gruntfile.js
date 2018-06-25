@@ -16,6 +16,7 @@ module.exports = function(grunt)
             development: {
                 files: {
                     'public/application.min.js': [
+                        'node_modules/handlebars/dist/handlebars.min.js',
                         'node_modules/jquery/dist/jquery.js',
                         'node_modules/bootstrap/dist/js/bootstrap.js',
                         'src/javascripts/application.js',
