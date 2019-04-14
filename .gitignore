@@ -4,4 +4,5 @@
 /node_modules
 
 /public/application.min.css
+/public/application.min.css.map
 /public/application.min.js

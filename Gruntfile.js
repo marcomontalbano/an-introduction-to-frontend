@@ -1,14 +1,18 @@
+var sass = require('node-sass');
+
 module.exports = function(grunt)
 {
 
     grunt.initConfig({
-        less: {
+        sass: {
             development: {
                 options: {
+                    implementation: sass,
                     compress: true,
+                    sourceMap: true
                 },
                 files: {
-                    'public/application.min.css': 'src/stylesheets/application.less'
+                    'public/application.min.css': 'src/stylesheets/application.scss'
                 }
             }
         },
@@ -26,8 +30,8 @@ module.exports = function(grunt)
         },
         watch: {
             css: {
-                files: ['src/**/*.less'],
-                tasks: ['less'],
+                files: ['src/**/*.scss'],
+                tasks: ['sass'],
             },
             js: {
                 files: ['src/**/*.js'],
@@ -36,11 +40,11 @@ module.exports = function(grunt)
         },
     });
 
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('build', ['less', 'uglify']);
+    grunt.registerTask('build', ['sass', 'uglify']);
     grunt.registerTask('default', ['build', 'watch']);
 
 };

@@ -1,0 +1,38 @@
+$yiq-text-dark: #223a48;
+$primary: #3484be;
+$jumbotron-bg: #e4edf6;
+$navbar-bg: #223a48;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  padding-top: 3.5rem;
+}
+
+svg.octicon {
+    fill: white;
+    height: 15px;
+    vertical-align: baseline;
+    width: 15px;
+}
+
+.navbar {
+    background: $navbar-bg;
+}
+
+.cookie-policy {
+    z-index: 1;
+    background-color: rgba($yiq-text-dark, .9);
+    color: $light;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 60px;
+
+    .cookie-policy--close {
+        cursor: pointer;
+        &:hover {
+            color: $light;
+        }
+    }
+}

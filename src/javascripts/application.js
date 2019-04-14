@@ -1,6 +1,7 @@
 
 // manage cookie policy
-$('.cookie-policy .cookie-policy--close').on('click', function() {
+$('.cookie-policy .cookie-policy--close').on('click', function(e) {
+    e.preventDefault();
     $(this).closest('.cookie-policy').fadeOut();
 })
 
@@ -14,7 +15,7 @@ $(document).on('click', '.article .article--like', function(e)
     var articleId = $article.data('articleId');
 
     $.ajax({
-        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend-for-beginners/articles/' + articleId,
+        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles/' + articleId,
         method: 'PATCH',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -34,7 +35,7 @@ $(function() {
     var html;
 
     $.ajax({
-        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend-for-beginners/articles',
+        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles',
         method: 'GET',
         contentType: 'application/json',
         success: function (articles) {
