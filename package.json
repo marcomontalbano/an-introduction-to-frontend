@@ -14,6 +14,7 @@
     "url": "https://github.com/marcomontalbano/an-introduction-to-frontend"
   },
   "scripts": {
+    "prestart": "npm run build",
     "start": "serve -p 5001",
     "build": "grunt build",
     "watch": "grunt watch",
@@ -21,19 +22,16 @@
     "deploy": "npm-run-all build gh-pages"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.1",
     "grunt": "~1.0.4",
-    "grunt-contrib-uglify": "~4.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.0.2",
+    "grunt-sass": "^3.1.0",
     "npm-run-all": "~4.1.5",
-    "sass": "~1.20.1"
+    "sass": "~1.23.0"
   },
   "dependencies": {
-    "bootstrap": "~4.3.1",
-    "handlebars": "~4.1.2",
-    "jquery": "~3.4.1",
-    "popper.js": "~1.15.0",
-    "serve": "~11.0.0"
+    "grunt-contrib-uglify-es": "~3.3.0",
+    "handlebars": "~4.4.3",
+    "serve": "~11.2.0"
   }
 }
