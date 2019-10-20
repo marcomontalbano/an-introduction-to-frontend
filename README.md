@@ -6,10 +6,9 @@ Welcome to **An introduction to Frontend**.
 The course covers:
 
 - HTML, CSS and Javascript basics
-- DOM manipulation with [Vanilla JS](http://vanilla-js.com/) and [jQuery](https://jquery.com/)
-- Quickly prototyping (e.g. [Twitter Bootstrap](https://getbootstrap.com/))
+- DOM manipulation with [Vanilla JS](http://vanilla-js.com/)
 - Dependency management with [NPM](https://www.npmjs.com/)
-- Task runner (e.g. [Grunt](https://gruntjs.com/))
+- Task runner (e.g. [Parcel](https://en.parceljs.org/))
 - CSS preprocessor (e.g. [Scss](https://sass-lang.com/))
 
 [Here](https://marcomontalbano.github.io/an-introduction-to-frontend) you can find what my course aims to create.

@@ -9,7 +9,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet" />
 
-        <link rel="stylesheet" href="application.min.css">
+        <link rel="stylesheet" href="../src/stylesheets/application.scss">
     </head>
 
     <body>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row articles"></div>
 
-            <script id="template-article" type="text/x-handlebars-template">
+            <script id="template-article" type="text/html">
                 <div class="article" data-article-id="{{id}}">
                     <h2>{{title}}</h2>
                     <p>
@@ -51,7 +51,7 @@
                         {{plot}}
                     </p>
                     <p>
-                        <a class="article--like {{#if like}}liked{{/if}}" href="#">like</a>
+                        <a class="article--like {{#like}}liked{{/like}}" href="#">like</a>
                     </p>
                 </div>
             </script>
@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <script src="application.min.js"></script>
+        <script src="../src/javascripts/application.js"></script>
     </body>
 
 </html>

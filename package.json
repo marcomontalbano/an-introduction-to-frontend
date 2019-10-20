@@ -1,6 +1,6 @@
 {
   "name": "an-introduction-to-frontend",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "description": "an-introduction-to-frontend",
   "homepage": "https://marcomontalbano.github.io/an-introduction-to-frontend/",
@@ -14,24 +14,18 @@
     "url": "https://github.com/marcomontalbano/an-introduction-to-frontend"
   },
   "scripts": {
-    "prestart": "npm run build",
-    "start": "serve -p 5001",
-    "build": "grunt build",
-    "watch": "grunt watch",
+    "build": "parcel build public/index.html",
+    "start": "parcel public/index.html",
     "gh-pages": "node ./scripts/gh-pages.js",
     "deploy": "npm-run-all build gh-pages"
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
-    "grunt": "~1.0.4",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-sass": "^3.1.0",
     "npm-run-all": "~4.1.5",
+    "parcel-bundler": "~1.12.4",
     "sass": "~1.23.0"
   },
   "dependencies": {
-    "grunt-contrib-uglify-es": "~3.3.0",
-    "handlebars": "~4.4.3",
-    "serve": "~11.2.0"
+    "mustache": "~3.1.0"
   }
 }
