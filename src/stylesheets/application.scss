@@ -28,7 +28,7 @@ body {
 
 .hero {
     background-color: $color-palette-2;
-    padding: 50px 50px 50px;
+    padding: 50px 25px 50px;
 }
 
 .container {
@@ -85,7 +85,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    line-height: 60px;
+    padding: 20px 0;
 
     opacity: .94;
     transition: 0.4s opacity;
