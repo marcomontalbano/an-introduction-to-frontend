@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  color: #223a48;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.navbar {
+  background-color: #223a48;
+  padding: 10px 0;
+}
+.navbar .navbar-brand {
+  /* specificità: 20 */
+  color: #e4edf6;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  /* specificità: 10 */
+  color: green;
+}
+
+.hero {
+  background-color: #e4edf6;
+  padding: 50px 25px 50px;
+}
+
+.container {
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article {
+  padding: 7.5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .article {
+    width: calc(100% / 3);
+  }
+}
+.article--like {
+  color: cornflowerblue;
+  transition: color 0.4s;
+}
+.article--like:hover {
+  color: darkblue;
+}
+.article--like.liked {
+  color: green;
+  font-weight: bold;
+}
+.article--image {
+  max-width: 100%;
+}
+.article--tag {
+  background-color: cornflowerblue;
+  color: #e4edf6;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.cookie-policy {
+  z-index: 1;
+  background-color: #223a48;
+  color: #e4edf6;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  opacity: 0.94;
+  transition: 0.4s opacity;
+}
+.cookie-policy.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.cookie-policy a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=/application.1f951cdf.css.map */
