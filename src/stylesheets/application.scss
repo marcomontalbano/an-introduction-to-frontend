@@ -1,38 +1,102 @@
-$yiq-text-dark: #223a48;
-$primary: #3484be;
-$jumbotron-bg: #e4edf6;
-$navbar-bg: #223a48;
-
-@import "../../node_modules/bootstrap/scss/bootstrap";
+$color-palette-1: #223a48;
+$color-palette-2: #e4edf6;
 
 body {
-  padding-top: 3.5rem;
-}
-
-svg.octicon {
-    fill: white;
-    height: 15px;
-    vertical-align: baseline;
-    width: 15px;
+    margin: 0;
+    color: $color-palette-1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .navbar {
-    background: $navbar-bg;
+    background-color: $color-palette-1;
+    padding: 10px 0;
+
+    .navbar-brand {
+        /* specificità: 20 */
+        color: $color-palette-2;
+        font-size: 18px;
+        text-decoration: none;
+    }
+}
+
+.navbar-brand {
+    /* specificità: 10 */
+    color: green;
+}
+
+.hero {
+    background-color: $color-palette-2;
+    padding: 50px 50px 50px;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    padding: 7.5px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+        width: calc(100% / 3);
+    }
+
+    &--like {
+        color: cornflowerblue;
+        transition: color 0.4s;
+
+        &:hover {
+        color: darkblue;
+        }
+
+        &.liked {
+        color: green;
+        font-weight: bold;
+        }
+    }
+
+    &--image {
+        max-width: 100%;
+    }
+
+    &--tag {
+        background-color: cornflowerblue;
+        color: $color-palette-2;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 12px;
+    }
 }
 
 .cookie-policy {
     z-index: 1;
-    background-color: rgba($yiq-text-dark, .9);
-    color: $light;
+    background-color: $color-palette-1;
+    color: $color-palette-2;
     position: fixed;
     bottom: 0;
     width: 100%;
     line-height: 60px;
 
-    .cookie-policy--close {
+    opacity: .94;
+    transition: 0.4s opacity;
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    a {
+        text-decoration: underline;
         cursor: pointer;
-        &:hover {
-            color: $light;
-        }
     }
 }

@@ -2,7 +2,6 @@
 
 /bower_components
 /node_modules
+/.cache
 
-/public/application.min.css
-/public/application.min.css.map
-/public/application.min.js
+/dist

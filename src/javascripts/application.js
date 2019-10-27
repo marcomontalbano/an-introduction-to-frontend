@@ -1,48 +1,61 @@
 
-// manage cookie policy
-$('.cookie-policy .cookie-policy--close').on('click', function(e) {
-    e.preventDefault();
-    $(this).closest('.cookie-policy').fadeOut();
+import Mustache from 'mustache';
+
+
+/**
+ * Manage Cookie Policy
+ */
+
+const cookiePolicy = document.querySelector('.cookie-policy');
+cookiePolicy.querySelector('a').addEventListener('click', function(event) {
+    event.preventDefault();
+    cookiePolicy.classList.add('hidden');
 })
 
-// Ajax Like
-$(document).on('click', '.article .article--like', function(e)
-{
-    e.preventDefault();
 
-    var $button = $(this);
-    var $article = $button.closest('.article');
-    var articleId = $article.data('articleId');
+/**
+ * Load Articles
+ */
 
-    $.ajax({
-        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles/' + articleId,
-        method: 'PATCH',
-        contentType: 'application/json',
-        data: JSON.stringify({
-            like: !$button.hasClass('btn-success')
-        }),
-        success: function (article) {
-            $button.toggleClass('btn-success', article.like);
-        }
+const articleContainer = document.querySelector('.articles');
+const source = document.getElementById('template-article').innerHTML;
+
+fetch('https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles')
+    .then(function (response) { return response.json() })
+    .then(function (articles) {
+        console.log(articles)
+        const articlesAsHtml = articles.map(function (article) {
+            return Mustache.render(source, article);
+        });
+
+        articleContainer.innerHTML = articlesAsHtml.join('');
     });
-});
 
-// Load Articles
-$(function() {
-    var $articles = $('.articles');
-    var source = document.getElementById('template-article').innerHTML;
-    var template = Handlebars.compile(source);
-    var html;
 
-    $.ajax({
-        url: 'https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles',
-        method: 'GET',
-        contentType: 'application/json',
-        success: function (articles) {
-            $.each(articles, function (index, article) {
-                html = template(article);
-                $articles.append(html);
+/**
+ * Handle Articles Like
+ */
+
+articleContainer.addEventListener('click', function(event) {
+    const likeButton = event.target;
+    if (likeButton.matches('.article--like')) {
+        event.preventDefault();
+        const articleElement = likeButton.closest('.article');
+        const articleId = articleElement.getAttribute('data-article-id');
+        
+        fetch('https://my-json-server.typicode.com/marcomontalbano/an-introduction-to-frontend/articles/' + articleId, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                like: !likeButton.classList.contains('liked')
+            })
+        })
+            .then(function(response) { return response.json(); })
+            .then(function(json) {
+                console.log(json);
+                likeButton.classList.toggle('liked', json.like);
             });
-        }
-    });
-});
+    }
+})
