@@ -15,6 +15,6 @@ All slides have been prepared and used by me while teaching a course on Frontend
 
 If you need an English version, please contact me.
 
-[Frontend Overview]: https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners-2016-edition-module-1
-[Make a Website]: https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners-2016-edition-module-2
-[Automation]: https://speakerdeck.com/marcomontalbano/an-introduction-to-frontend-for-beginners-2016-edition-module-3
+[Frontend Overview]: ./An%20introduction%20to%20Frontend%20for%20beginners%20-%202016%20Edition%20-%20Module%203.pdf
+[Make a Website]: ./An%20introduction%20to%20Frontend%20for%20beginners%20-%202016%20Edition%20-%20Module%202.pdf
+[Automation]: ./An%20introduction%20to%20Frontend%20for%20beginners%20-%202016%20Edition%20-%20Module%203.pdf
