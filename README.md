@@ -1,11 +1,10 @@
-An introduction to Frontend
-===========================
+# An introduction to Frontend
 
 Welcome to **An introduction to Frontend**.
 
 The course covers:
 
-- HTML, CSS and Javascript (ES6) basics
+- HTML, CSS, and Javascript (ES6) basics
 - DOM manipulation with [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - Dependency management with [NPM](https://www.npmjs.com/)
 - Task runner (e.g. [Parcel](https://en.parceljs.org/))
