@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "Article Title 1",
-            "picture": "https://placeimg.com/768/480/tech?1",
+            "picture": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=3520&auto=format&fit=crop",
             "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
             "tag": "tech",
             "like": false
@@ -11,7 +11,7 @@
         {
             "id": 2,
             "title": "Article Title 2",
-            "picture": "https://placeimg.com/768/480/tech?2",
+            "picture": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=3544&auto=format&fit=crop",
             "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
             "tag": "tech",
             "like": true
@@ -19,7 +19,7 @@
         {
             "id": 3,
             "title": "Article Title 3",
-            "picture": "https://placeimg.com/768/480/tech?3",
+            "picture": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=3540&auto=format&fit=crop",
             "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
             "tag": "tech",
             "like": false
@@ -27,7 +27,7 @@
         {
             "id": 4,
             "title": "Article Title 4",
-            "picture": "https://placeimg.com/768/480/tech?4",
+            "picture": "https://images.unsplash.com/photo-1562408590-e32931084e23?q=80&w=3540&auto=format&fit=crop",
             "plot": "Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
             "tag": "tech",
             "like": false

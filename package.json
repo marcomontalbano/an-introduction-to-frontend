@@ -14,18 +14,22 @@
     "url": "https://github.com/marcomontalbano/an-introduction-to-frontend"
   },
   "scripts": {
-    "build": "parcel build public/index.html --public-url ./",
     "start": "parcel public/index.html",
+    "build": "parcel build public/index.html --public-url ./",
+    "serve": "npx serve dist",
     "gh-pages": "node ./scripts/gh-pages.js",
-    "deploy": "npm-run-all build gh-pages"
+    "deploy": "npm-run-all build gh-pages",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:minor": "pnpm dep:major -t minor"
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
-    "npm-run-all": "~4.1.5",
-    "parcel-bundler": "~1.12.4",
-    "sass": "~1.26.3"
+    "@parcel/transformer-sass": "^2.12.0",
+    "gh-pages": "^6.1.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.12.0",
+    "sass": "^1.75.0"
   },
   "dependencies": {
-    "mustache": "~4.0.1"
+    "mustache": "^4.2.0"
   }
 }
